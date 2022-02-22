@@ -1,0 +1,572 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Retro Computer';
+    src: url('font/retro_computer_personal_use.ttf');
+}
+
+@font-face {
+    font-family: 'Pokemon Solid';
+    src: url('font/Pokemon-Solid.ttf');
+}
+
+@font-face {
+    font-family: 'Pokemon Hollow';
+    src: url('font/Pokemon-Hollow.ttf');
+}
+
+@font-face {
+    font-family: 'Alarm Clock';
+    src: url('font/alarm-clock.ttf');
+}
+
+.container {
+    position: absolute;
+    background-color: #000;
+    background: url('img/cenario.jpg') center no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: -5;
+}
+
+.pokedex {
+    width: 100vw;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.pokedex-sombra {
+    position: absolute;
+    width: 1000px;
+    height: 200px;
+    bottom: 10px;
+    z-index: -1;
+    border-radius: 50px;
+    box-shadow: rgb(112,6,6) -11px 20px 1px;
+}
+
+.pokedex-lado-direito, .pokedex-lado-esquerdo {
+    position: relative;
+    width: 500px;
+    height: 580px;
+    border-radius: 50px;
+}
+
+.pokedex-encaixe {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 510px;
+    /* background-color: rgb(194, 12, 12); */
+    background: linear-gradient(90deg, rgb(153, 10, 10), rgb(194, 12, 12),rgb(158, 8, 8));
+    z-index: 5;
+}
+
+.pokedex-encaixe-topo{
+    /* border: rgba(60,0,0,0.2) 1px solid; */
+    width: 49px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    background: linear-gradient(90deg, rgb(139, 5, 5), rgb(184, 15, 15),rgb(139, 5, 5));
+
+}
+
+.pokedex-encaixe-embaixo{
+    background: linear-gradient(90deg, rgb(139, 5, 5), rgb(184, 15, 15),rgb(139, 5, 5));
+    /* border: rgba(60,0,0,0.2) 1px solid; */
+    width: 49px;
+    height: 20px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.pokedex-encaixe::after{
+    content: '';
+    background: linear-gradient(90deg, rgb(139, 5, 5), rgb(184, 15, 15),rgb(139, 5, 5));
+    /* border: rgba(60,0,0,0.2) 1px solid; */
+    width: 49px;
+    height: 10px;
+    position: absolute;
+    top: 30px;
+}
+
+.pokedex-encaixe::before{
+    content: '';
+    background: linear-gradient(90deg, rgb(139, 5, 5), rgb(192, 9, 9),rgb(139, 5, 5));
+    /* border: rgba(60,0,0,0.2) 1px solid; */
+    width: 49px;
+    height: 10px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.pokedex-lado-esquerdo {
+    box-shadow: rgb(112, 6, 6) -14px 10px 1px;
+    background-color: rgb(194, 12, 12);   
+    height: 580px;
+}
+
+.luz-azul {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgb(57, 73, 167);
+    border-radius: 100%;
+    z-index: 3;
+}
+
+.luz-azul::after {
+    content: '';
+    position: absolute;
+    bottom: 11px;
+    left: -9px;
+    width: 79px;
+    height: 79px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 0 rgb(43, 50, 141);
+}
+
+.luz-azul::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    z-index: 2;
+    left: 45px;
+    width: 20px;
+    height: 30px;
+    border-radius: 100%;
+    background: rgba(102, 178, 197, 0.7);
+}
+
+.borda-luz {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: rgb(204, 204, 204);
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.luz-vermelha-sombra, .luz-verde-sombra, .luz-amarela-sombra {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: rgb(134, 64, 64);
+    border-radius: 100%;
+    z-index: 1;
+    top: 18px;
+}
+
+.luz-vermelha-sombra {
+    left: 148px;
+}
+
+.luz-amarela-sombra {
+    left: 188px;
+}
+
+.luz-verde-sombra {
+    left: 228px;
+}
+
+.luz-vermelha {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    background: rgb(212, 63, 57);
+    border-radius: 100%;
+    z-index: 3;
+}
+
+.luz-vermelha::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 8px 2px 0 0 rgb(167, 39, 39);
+}
+
+.luz-vermelha::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    z-index: 2;
+    left: 12px;
+    width: 6px;
+    height: 10px;
+    border-radius: 100%;
+    background: rgba(245, 157, 157, 0.7);
+}
+
+.luz-amarela {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 190px;
+    background: rgb(236, 223, 106);
+    border-radius: 100%;
+    z-index: 3;
+}
+
+.luz-amarela::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 8px 2px 0 0 rgb(192, 161, 76);
+}
+
+.luz-amarela::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    z-index: 2;
+    left: 12px;
+    width: 6px;
+    height: 10px;
+    border-radius: 100%;
+    background: rgba(255, 255, 229, 0.7);
+}
+
+.luz-verde {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 230px;
+    background: rgb(102, 167, 82);
+    border-radius: 100%;
+    z-index: 3;
+}
+
+.luz-verde::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 8px 2px 0 0 rgb(38, 134, 59);
+}
+
+.luz-verde::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    z-index: 2;
+    left: 12px;
+    width: 6px;
+    height: 10px;
+    border-radius: 100%;
+    background: rgba(228, 255, 207, 0.7);
+}
+
+.pokedex-tela-container {
+    position: absolute;
+    top: 170px;
+    left: 45px;
+    width: 360px;
+    height: 250px;
+    border-radius: 2% 2% 2% 25%;
+    background-color: rgb(214, 214, 214);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgb(113, 126, 167) -2px 3px 2px;
+}
+
+.pokedex-tela {
+    position: relative;
+    margin-top: 20px;
+    width: 280px;
+    height: 180px;
+    background-color: #282756;
+    opacity: 0.9;
+    background-image:  linear-gradient(#41622b 0.2000000000000001px, transparent 0.7000000000000001px), linear-gradient(to right, #41622b 0.2000000000000001px, #0d0d1a 0.7000000000000001px);
+    background-size: 8px 8px;
+    z-index: 5;
+    contain: content;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border: rgba(134, 162, 223, 0.822) solid 2px;
+}
+
+.sprite-container {
+    width: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.pokedex-tela-detalhes-topo{
+    width: 12px;
+    height: 12px;
+    background: rgb(235, 33, 33);
+    position: absolute;
+    top: 4px;
+    left: 170px;
+    border-radius: 100%;
+    z-index: 4;
+    box-shadow: inset rgb(238, 141, 141) -2px 2px 2px;
+    border-bottom: rgb(167, 77, 77) 2px solid;
+    border-left: rgb(167, 77, 77) 2px solid;
+}
+
+.pokedex-tela-detalhes-topo::after{
+    content: '';
+    width: 10px;
+    height:10px;
+    background: rgb(235, 33, 33);
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    border-radius: 100%;
+    z-index: 4;
+    box-shadow: inset rgb(238, 141, 141) -2px 2px 2px;
+    border-bottom: rgb(167, 77, 77) 2px solid;
+    border-left: rgb(167, 77, 77) 2px solid;
+}
+
+.pokedex-tela-detalhes-embaixo{
+    width: 20px;
+    height: 20px;
+    background: rgb(235, 33, 33);
+    position: absolute;
+    bottom: 20px;
+    left: 38px;
+    border-radius: 100%;
+    z-index: 4;
+    box-shadow: inset rgb(238, 141, 141) -2px 2px 2px;
+    border-bottom: rgb(167, 77, 77) 2px solid;
+    border-left: rgb(167, 77, 77) 3px solid;
+}
+
+.pokedex-tela-detalhes-embaixo::after {
+    content: '';
+    width: 50px;
+    height: 30px;
+    right:-262px;
+    position: absolute;
+    background-color: rgb(214, 214, 214);
+    background-size: 4px 7px;
+    background-image: repeating-linear-gradient(0deg, rgb(71, 71, 71), rgb(71, 71, 71), 1.7000000000000002px, rgb(214, 214, 214) 1.700000000000000px, rgb(214, 214, 214));
+}
+
+.pokemon-sprite {
+    width: 180px;
+}
+
+#pokemon-name {
+    font-family: 'Retro Computer', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    color: rgb(252, 252, 252);
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 5px;
+    position: absolute;
+    top: 0;
+}
+
+.visor-informacoes {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    background-color: rgb(222, 222, 252);
+    opacity: 0.9;
+    background-image:  linear-gradient(#41622b 0.2000000000000001px, transparent 0.7000000000000001px), linear-gradient(to right, #41622b 0.2000000000000001px, #0d0d1a 0.7000000000000001px);
+    background-size: 8px 8px;
+    right: 55px;
+    top: 170px;
+    border: rgb(156, 100, 103) 1px solid;
+    border-radius: 10px;
+}
+
+.teclado {
+    position: absolute;
+    top: 330px;
+    left: 47px;
+    display: flex;
+    flex-direction: row;
+    width: 420px;
+    flex-wrap: wrap;
+}
+
+.teclado button {
+    background-color: rgb(71, 149, 250);
+    background: linear-gradient(180deg, rgb(66, 146, 250),  rgb(65, 105, 236));
+    border: rgba(7, 49, 110, 0.4) 1px solid;
+    box-shadow: rgb(0, 35, 88) -4px 4px 1px, rgb(118, 173, 245) -3px 6px 6px inset;
+    width: 76px;
+    height: 45px;
+    font-size: 20px;
+    color: rgb(236, 236, 236);
+    font-family: 'Alarm Clock', Arial, Helvetica, sans-serif;
+}
+
+.teclado .button {
+    width: 76px;
+    margin: 1px 2px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+}
+
+.clicavel:hover {
+    cursor: pointer;
+}
+
+.teclado button:active {
+   width: 73px;
+   height: 43px;
+   box-shadow: rgb(0, 35, 88) -2px 2px 1px, rgb(118, 173, 245) -3px 6px 6px inset;
+}
+
+.teclado .button:first-child button{
+    border-radius: 10px 0 0 0;
+}
+
+.teclado .button:last-child button {
+    border-radius:  0 0 10px 0;
+}
+
+.teclado .button:nth-child(5) button {
+    border-radius: 0 10px 0 0;
+}
+
+.teclado .button:nth-child(6) button {
+    border-radius:  0 0 0 10px;
+}
+
+#visor-info {
+    color: yellow;
+    z-index: 5;
+    font-size: 30px;
+}
+
+.botoes-sprite {
+    position: absolute;
+    bottom: 110px;
+    left: 40px;
+    z-index: 4;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.btn-virar-sprite {
+    position: absolute;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgb(60, 114, 231);
+    border: none;
+    box-shadow: #8cbcece3 -2px 4px 7px inset, #12315fe3 -4px 5px 2px;
+    position: relative;
+}
+
+.btn-virar-sprite:active {
+    width: 45px;
+    height: 45px;
+    box-shadow: #8cbcece3 -2px 4px 7px inset, #12315fe3 -2px 2px 2px;
+}
+
+.btn-proximo-sprite, .btn-anterior-sprite {
+    width: 80px;
+    height: 25px;
+    position: absolute;
+    border-radius: 60px;
+    margin-left: 10px;
+    top: 20px;
+    border: none;
+}
+
+.btn-anterior-sprite {
+    left: 60px;
+    background-color: rgb(154, 221, 47);
+    box-shadow: rgba(228, 255, 207, 0.7) 2px 4px 7px inset, rgb(17, 77, 17) -4px 4px 2px;
+}
+
+.btn-proximo-sprite {
+    left: 150px;
+    background-color: rgb(226, 156, 76);
+    box-shadow: rgba(255, 250, 207, 0.7) 2px 4px 7px inset, rgb(90, 38, 18) -4px 4px 2px;
+}
+
+.btn-proximo-sprite:active, .btn-anterior-sprite:active {
+    height: 22px;
+    width: 75px;
+    top: 22px;
+}
+
+.btn-proximo-sprite:active {
+    box-shadow: rgba(228, 255, 207, 0.7) 2px 4px 7px inset, rgb(17, 77, 17) -2px 2px 2px;
+}
+
+.btn-anterior-sprite:active {
+    box-shadow: rgba(255, 250, 207, 0.7) 2px 4px 7px inset, rgb(90, 38, 18) -2px 2px 2px;
+}
+
+.visor-id {
+    position: absolute;
+    bottom: 30px;
+    left: 110px;
+}
+
+
+input[type=number] {
+    border: 3px solid rgb(117, 5, 5);
+    height: 60px;
+    width: 150px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: 'Alarm Clock', Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    background: rgb(148, 202, 104);
+    resize: none;
+    scroll-behavior: unset;
+}
+
+input[type=number]:focus {
+    outline: 0;
+    caret-color: rgb(23, 112, 14);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;   
+    appearance: none;
+}

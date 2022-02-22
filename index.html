@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pokedex">
+            <div class="pokedex-lado-esquerdo">
+                <div class="pokedex-encaixe">
+                    <div class="pokedex-encaixe-topo"></div>
+                    <div class="pokedex-encaixe-embaixo"></div>
+                </div>
+                <svg height="600" width="600">
+                    <defs>
+                        <linearGradient id="grad1" x1="10%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgb(221, 37, 37);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(167, 3, 3);stop-opacity:1" />
+                          </linearGradient>
+                      </defs>
+                    
+                    <path d="M0,130 
+                    L0,520 
+                    Q0,590,60,580 
+                    L500,580 
+                    Q500,120,500,70 
+                    Q320,70,270,100 
+                    Q210,140,0,130 
+                    Z"  
+                    fill="rgb(132, 6, 6)" stroke="rgba(40,0,0,0.4)"/>    
+
+                    <path d="M10,140 
+                            L10,500 
+                            Q10,570,50,570 
+                            L440,570 
+                            Q440,120,440,80 
+                            Q320,80,280,105 
+                            Q210,140,80,140 
+                            Z"  
+                            fill="url(#grad1)" stroke="none"/>        
+                </svg>
+                <div class="pokedex-topo">
+                    <div class="luz-azul"></div>
+                    <div class="borda-luz"></div>
+                    <div class="luzes-grupo">
+                        <div class="luz-vermelha"></div>
+                        <div class="luz-vermelha-sombra"></div>
+                        <div class="luz-amarela"></div>
+                        <div class="luz-amarela-sombra"></div>
+                        <div class="luz-verde"></div>
+                        <div class="luz-verde-sombra"></div>
+                    </div>
+                </div>
+                <div class="pokedex-tela-container">
+                    <div class="pokedex-tela-detalhes-topo"></div>
+                    <div class="pokedex-tela" id="tela">
+                        <h1 id="pokemon-name"></h1>
+                        <div class="sprite-container sprite-direita" id="sprite-direita"></div>
+                        <div class="sprite-container sprite-esquerda" id="sprite-esquerda"></div>
+                    </div>
+                    <div class="pokedex-tela-detalhes-embaixo"></div>
+                </div>
+                <div class="pokedex-embaixo">
+                    <div class="botoes-sprite">
+                        <button class="clicavel btn-virar-sprite"></button>
+                        <button class="clicavel btn-proximo-sprite"></button>
+                        <button class="clicavel btn-anterior-sprite"></button>
+                    </div>
+                    <div class="visor-id">
+                        <input type="number" id="input-id" min="1" max="898" value="1">
+                    </div>
+                    <div class="setas">
+                        <button class="clicavel seta seta-cima"></button>
+                        <button class="clicavel seta seta-direita"></button>
+                        <button class="clicavel seta seta-esquerda"></button>
+                        <button class="clicavel seta seta-baixo"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pokedex-lado-direito">
+                <svg height="600" width="600">
+                    <path d="M500,140 
+                            L500,530 
+                            Q500,580,400,580 
+                            L0,580 
+                            Q0,200,0,70 
+                            Q70,70,160,115 
+                            Q220,140,250,140 
+                            Z"  
+                    fill="url(#grad1)" stroke="none"/>
+            
+                    <path  d="M490,150 
+                            L490,530 
+                            Q490,570,400,570 
+                            L10,570 
+                            Q10,20,10,80 
+                            Q120,100,175,130 
+                            Q220,150,230,150 
+                            Z"  
+                    fill="rgb(132, 6, 6)" stroke="none"/>
+
+                    <path d="M480,160 
+                            L480,530 
+                            Q480,570,360,560 
+                            L20,560 
+                            Q20,170,20,90 
+                            Q80,95,180,140 
+                            Q220,160,240,160 
+                            Z"  
+                    fill="url(#grad1)" stroke="none"/>       
+                </svg>
+
+                <div class="visor-informacoes" id="visor-info"></div>
+                <div class="teclado">
+                    <div class="button"><button class="clicavel teclado-btn" data-number="1">1</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="2">2</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="3">3</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="4">4</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="5">5</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="6">6</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="7">7</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="8">8</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="9">9</button></div>
+                    <div class="button"><button class="clicavel teclado-btn" data-number="0">0</button></div>
+                </div>
+            </div>
+            <div class="pokedex-sombra"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
